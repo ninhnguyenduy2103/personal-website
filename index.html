@@ -117,12 +117,26 @@
     letter-spacing: 0.01em;
   }
 
+  /* Info grid */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  @media (min-width: 760px) {
+    .info-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
   /* Bio section */
   .bio-section {
     background: var(--sage-soft);
     border-radius: 16px;
     padding: 36px 32px;
-    margin-bottom: 32px;
+    margin-bottom: 0;
   }
 
   .bio-section h2 {
@@ -142,6 +156,33 @@
 
   .bio-section p:last-child {
     margin-bottom: 0;
+  }
+
+  .nurture-list {
+    list-style: none;
+    font-size: 0.92rem;
+    color: #3f4a40;
+  }
+
+  .nurture-list li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 12px;
+  }
+
+  .nurture-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  .nurture-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--terracotta);
   }
 
   /* Quote */
@@ -312,11 +353,24 @@
 
     <p class="quote">Mối quan tâm của tôi nằm ở giao điểm giữa giáo dục, văn hóa và mối quan hệ giữa con người với nhau, với cộng đồng và với Trái Đất.</p>
 
-    <section class="bio-section">
-      <h2>Đôi nét về công việc</h2>
-      <p>Hiện tôi đồng hành cùng các doanh nghiệp và tổ chức trong việc xây dựng nền tảng vận hành và phát triển.</p>
-      <p>Đồng thời, tôi cũng phát triển những dự án cá nhân nhằm tạo ra các không gian học tập, trải nghiệm văn hóa và những cuộc trò chuyện có ý nghĩa cho gia đình và cộng đồng.</p>
-    </section>
+    <div class="info-grid">
+      <section class="bio-section">
+        <h2>Đôi nét về công việc</h2>
+        <p>Hiện tôi đồng hành cùng các doanh nghiệp và tổ chức trong việc xây dựng nền tảng vận hành và phát triển.</p>
+        <p>Đồng thời, tôi cũng phát triển những dự án cá nhân nhằm tạo ra các không gian học tập, trải nghiệm văn hóa và những cuộc trò chuyện có ý nghĩa cho gia đình và cộng đồng.</p>
+      </section>
+
+      <section class="bio-section">
+        <h2>Những điều tôi đang nuôi dưỡng</h2>
+        <ul class="nurture-list">
+          <li>Tập thơ thứ hai dành cho thiếu nhi, lấy cảm hứng từ thiên nhiên, văn hóa và những điều bình dị diễn ra trong cuộc sống thường ngày.</li>
+          <li>Hành trình đồng hành cùng những người chăm sóc trẻ cùng Quỹ Giáo Viên Hạnh Phúc.</li>
+          <li>Hành trình thực hành và học hỏi từ chương trình Trường Học Hạnh Phúc cùng Eurasia Learning Institute.</li>
+          <li>Cộng đồng Actions for Happiness, nơi tôi tham gia điều phối và lan tỏa những thực hành nuôi dưỡng hạnh phúc trong đời sống thường ngày.</li>
+          <li>Những hoạt động góp phần xây dựng lối sống xanh, sự kết nối với thiên nhiên và một tương lai bền vững hơn.</li>
+        </ul>
+      </section>
+    </div>
 
     <div class="cta-wrap">
       <a class="linkedin" href="https://www.linkedin.com/in/ninhnguyen2103/" target="_blank" rel="noopener noreferrer">
