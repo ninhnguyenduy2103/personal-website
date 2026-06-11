@@ -27,8 +27,7 @@
   body {
     font-family: "Montserrat", sans-serif;
     background:
-      radial-gradient(ellipse 900px 700px at 12% -5%, rgba(220, 229, 214, 0.55), transparent 60%),
-      radial-gradient(ellipse 800px 600px at 100% 110%, rgba(246, 221, 225, 0.5), transparent 60%),
+      radial-gradient(circle 500px at 8% 0%, rgba(220, 229, 214, 0.5), transparent 70%),
       var(--ivory);
     color: var(--brown);
     min-height: 100vh;
@@ -191,14 +190,26 @@
   }
 
   .contact a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     color: var(--brown);
     text-decoration: none;
-    border-bottom: 1px solid var(--terracotta);
     transition: color 0.2s ease;
+  }
+
+  .contact a span {
+    border-bottom: 1px solid var(--terracotta);
   }
 
   .contact a:hover {
     color: var(--terracotta);
+  }
+
+  .contact-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
   }
 
   .contact-row {
@@ -221,10 +232,10 @@
 </head>
 <body>
   <svg class="bg-deco" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <!-- Soft light rays through curtain (top-left) -->
+    <!-- Soft light glow (top-left) -->
     <g opacity="0.5">
-      <polygon points="0,0 260,0 40,420 0,380" fill="#F6DDE1" />
-      <polygon points="120,0 320,0 160,460 80,440" fill="#FBF7F2" />
+      <circle cx="20" cy="0" r="140" fill="#F6DDE1" />
+      <circle cx="100" cy="80" r="110" fill="#FBF7F2" />
     </g>
 
     <!-- Soft light glow (bottom-right) -->
@@ -290,8 +301,23 @@
     </div>
 
     <div class="contact">
-      <div class="contact-row"><a href="mailto:ninhnguyenduy2103@gmail.com">ninhnguyenduy2103@gmail.com</a></div>
-      <div class="contact-row"><a href="tel:+84369931239">(84) 369 931 239</a></div>
+      <div class="contact-row">
+        <a href="mailto:ninhnguyenduy2103@gmail.com">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="M2 6 L12 13 L22 6" />
+          </svg>
+          <span>ninhnguyenduy2103@gmail.com</span>
+        </a>
+      </div>
+      <div class="contact-row">
+        <a href="tel:+84369931239">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" />
+          </svg>
+          <span>(84) 369 931 239</span>
+        </a>
+      </div>
     </div>
 
     <div class="footer">NINH NGUYEN</div>
