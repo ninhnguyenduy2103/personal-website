@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ninh Nguyen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #2F4538;
+    --sage: #B7C4B0;
+    --sage-soft: #DCE5D6;
+    --powder-pink: #F6DDE1;
+    --terracotta: #C97B5F;
+    --brown: #5A4434;
+    --ivory: #FBF7F2;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Montserrat", sans-serif;
+    background: var(--ivory);
+    color: var(--brown);
+    min-height: 100vh;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 64px 24px;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 20%;
+    border: 3px solid var(--sage-soft);
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-family: "Cormorant Garamond", "Bogart", serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--forest);
+    letter-spacing: 0.03em;
+    margin-bottom: 12px;
+  }
+
+  .divider {
+    width: 48px;
+    height: 1px;
+    background: var(--brown);
+    margin: 16px auto;
+    opacity: 0.5;
+  }
+
+  .tagline {
+    font-family: "Cormorant Garamond", "Bogart", serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--terracotta);
+    letter-spacing: 0.01em;
+  }
+
+  /* Bio section */
+  .bio-section {
+    background: var(--sage-soft);
+    border-radius: 16px;
+    padding: 36px 32px;
+    margin-bottom: 32px;
+  }
+
+  .bio-section h2 {
+    font-family: "Cormorant Garamond", "Bogart", serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  .bio-section p {
+    font-size: 0.97rem;
+    color: #3f4a40;
+    margin-bottom: 14px;
+  }
+
+  .bio-section p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Quote */
+  .quote {
+    font-family: "Cormorant Garamond", "Bogart", serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--brown);
+    text-align: center;
+    padding: 8px 28px;
+    border-left: 2px solid var(--terracotta);
+    border-right: 2px solid var(--terracotta);
+    margin: 0 auto 40px;
+    max-width: 560px;
+  }
+
+  /* CTA */
+  .cta-wrap {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .linkedin, .project {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: background 0.25s ease, transform 0.2s ease, color 0.25s ease;
+  }
+
+  .linkedin {
+    background: var(--powder-pink);
+    color: var(--brown);
+  }
+
+  .linkedin:hover {
+    background: var(--terracotta);
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
+  .project {
+    background: var(--forest);
+    color: #fff;
+  }
+
+  .project:hover {
+    background: var(--brown);
+    transform: translateY(-1px);
+  }
+
+  /* Contact */
+  .contact {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.85rem;
+    color: var(--brown);
+    letter-spacing: 0.02em;
+  }
+
+  .contact a {
+    color: var(--brown);
+    text-decoration: none;
+    border-bottom: 1px solid var(--terracotta);
+    transition: color 0.2s ease;
+  }
+
+  .contact a:hover {
+    color: var(--terracotta);
+  }
+
+  .contact-row {
+    margin-bottom: 6px;
+  }
+
+  .contact-row:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 0.78rem;
+    color: var(--sage);
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="header">
+      <img class="avatar" src="avatar.png" alt="Ninh Nguyen">
+      <h1>Ninh Nguyen</h1>
+      <div class="divider"></div>
+      <p class="tagline">Học theo câu hỏi. Kết nối qua trải nghiệm.</p>
+    </header>
+
+    <p class="quote">Mối quan tâm của tôi nằm ở giao điểm giữa giáo dục, văn hóa và mối quan hệ giữa con người với nhau, với cộng đồng và với Trái Đất.</p>
+
+    <section class="bio-section">
+      <h2>Đôi nét về công việc</h2>
+      <p>Hiện tôi đồng hành cùng các doanh nghiệp và tổ chức trong việc xây dựng nền tảng vận hành và phát triển.</p>
+      <p>Đồng thời, tôi cũng phát triển những dự án cá nhân nhằm tạo ra các không gian học tập, trải nghiệm văn hóa và những cuộc trò chuyện có ý nghĩa cho gia đình và cộng đồng.</p>
+    </section>
+
+    <div class="cta-wrap">
+      <a class="linkedin" href="https://www.linkedin.com/in/ninhnguyen2103/" target="_blank" rel="noopener noreferrer">
+        Kết nối trên LinkedIn ↗
+      </a>
+      <a class="project" href="https://www.facebook.com/ninh.peace" target="_blank" rel="noopener noreferrer">
+        Vòng tròn dưới tán cây ↗
+      </a>
+    </div>
+
+    <div class="contact">
+      <div class="contact-row"><a href="mailto:ninhnguyenduy2103@gmail.com">ninhnguyenduy2103@gmail.com</a></div>
+      <div class="contact-row"><a href="tel:+84369931239">(84) 369 931 239</a></div>
+    </div>
+
+    <div class="footer">NINH NGUYEN</div>
+
+  </div>
+</body>
+</html>
