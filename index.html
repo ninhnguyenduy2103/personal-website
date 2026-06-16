@@ -361,13 +361,21 @@
   /* Quote */
   .quote {
     font-family: "Cormorant Garamond", "Bogart", serif;
-    font-size: 1.45rem;
+    font-size: 1.1rem;
     font-style: italic;
     color: var(--brown);
     text-align: center;
     padding: 8px 28px;
     margin: 0 auto 40px;
     max-width: 560px;
+  }
+
+  @media (min-width: 480px) {
+    .quote { font-size: 1.3rem; }
+  }
+
+  @media (min-width: 640px) {
+    .quote { font-size: 1.45rem; }
   }
 
   .quote::before {
