@@ -81,22 +81,24 @@
     color: var(--forest);
     line-height: 1.25;
     letter-spacing: 0.02em;
-    margin-bottom: 20px;
+    margin-bottom: 0;
   }
 
-  .page-intro {
-    font-size: 1.05rem;
+  /* Opening — short, spaced-out lines */
+  .opening {
+    margin-bottom: 40px;
+  }
+
+  .opening p {
+    font-family: "Cormorant Garamond", "Bogart", serif;
+    font-size: 1.2rem;
+    font-style: italic;
     color: var(--brown);
-    line-height: 1.9;
+    line-height: 1.7;
+    margin-bottom: 6px;
   }
 
-  .content p {
-    font-size: 0.97rem;
-    color: #3f4a40;
-    line-height: 1.9;
-    margin-bottom: 20px;
-  }
-  .content p:last-child { margin-bottom: 0; }
+  .opening p:last-child { margin-bottom: 0; }
 
   .divider-light {
     width: 100%;
@@ -105,19 +107,68 @@
     margin: 40px 0;
   }
 
-  /* Placeholder notice */
-  .placeholder-box {
-    background: var(--sage-soft);
-    border-radius: 14px;
-    padding: 32px 36px;
-    text-align: center;
+  /* Section headings */
+  h2 {
+    font-family: "Cormorant Garamond", "Bogart", serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--forest);
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
   }
 
-  .placeholder-box p {
-    font-size: 0.92rem;
+  /* Body paragraphs */
+  .content p {
+    font-size: 0.97rem;
     color: #3f4a40;
-    line-height: 1.8;
+    line-height: 1.9;
+    margin-bottom: 16px;
   }
+  .content p:last-child { margin-bottom: 0; }
+
+  /* Short poetic lines */
+  .poetic {
+    margin: 0 0 24px;
+  }
+  .poetic p {
+    font-size: 0.95rem;
+    color: #3f4a40;
+    line-height: 1.7;
+    margin-bottom: 4px;
+  }
+  .poetic p:last-child { margin-bottom: 0; }
+
+  /* Highlighted section */
+  .highlight-box {
+    background: var(--sage-soft);
+    border-radius: 14px;
+    padding: 28px 32px;
+  }
+  .highlight-box p {
+    font-size: 0.97rem;
+    color: #3f4a40;
+    line-height: 1.9;
+    margin-bottom: 16px;
+  }
+  .highlight-box p:last-child { margin-bottom: 0; }
+
+  /* Closing invitation */
+  .invitation {
+    margin-top: 40px;
+    padding: 32px 36px;
+    border-left: 3px solid var(--terracotta);
+    background: rgba(246, 221, 225, 0.25);
+    border-radius: 0 14px 14px 0;
+  }
+  .invitation p {
+    font-family: "Cormorant Garamond", "Bogart", serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--brown);
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+  .invitation p:last-child { margin-bottom: 0; }
 
   /* CTA */
   .cta-section {
@@ -182,18 +233,89 @@
     <header class="page-header">
       <p class="page-label">Dự án cộng đồng</p>
       <h1>Vòng Tròn Dưới Tán Cây</h1>
-      <p class="page-intro">Con người, tự nhiên và sự kết nối bền vững.</p>
     </header>
 
+    <div class="opening">
+      <p>Có một điều tôi quan sát thấy trong nhiều năm qua.</p>
+      <p>Không chỉ trong các tổ chức mà cả trong các gia đình.</p>
+      <p>Con người ngày càng bận rộn hơn.</p>
+      <p>Lịch trình dày hơn. Thông tin nhiều hơn.</p>
+      <p>Nhưng những khoảng thời gian thực sự hiện diện cùng nhau dường như lại ít đi.</p>
+    </div>
+
     <div class="content">
-      <p>Song song với thế giới doanh nghiệp, tôi dành thời gian khám phá những không gian học tập và kết nối dựa trên trải nghiệm trực tiếp với thiên nhiên, cộng đồng và chính mình.</p>
-      <p>Từ những vòng tròn dưới tán cây đến các hoạt động giáo dục trải nghiệm, tôi quan tâm đến cách con người xây dựng mối liên hệ sâu sắc hơn với bản thân, với người khác và với thế giới tự nhiên.</p>
+      <p>Nhiều bố mẹ nói với tôi rằng họ rất yêu con. Nhưng giữa công việc, trách nhiệm và những guồng quay mỗi ngày, thời gian để thật sự quan sát con, trò chuyện với con hay đơn giản là ở cạnh nhau một cách trọn vẹn trở nên ngày càng hiếm.</p>
+      <p>Và tôi nhận ra điều thiếu hụt đôi khi không phải là thêm một phương pháp, một khóa học hay một giải pháp mới.</p>
+    </div>
+
+    <div class="invitation" style="margin-top: 24px; margin-bottom: 0;">
+      <p>Mà là những khoảng dừng.</p>
+      <p>Một khoảng dừng đủ chậm để nhìn kỹ hơn.</p>
+      <p>Một khoảng dừng đủ an toàn để lắng nghe nhau.</p>
+      <p>Một khoảng dừng đủ chân thật để những điều vốn đã ở đó có cơ hội được nhìn thấy.</p>
+    </div>
+
+    <div class="content" style="margin-top: 24px;">
+      <p>Từ những suy nghĩ ấy, Vòng Tròn Dưới Tán Cây dần được hình thành.</p>
     </div>
 
     <div class="divider-light"></div>
 
-    <div class="placeholder-box">
-      <p>Nội dung chi tiết về Vòng Tròn Dưới Tán Cây đang được chuẩn bị.<br>Bạn có thể theo dõi cập nhật trên trang Facebook của dự án.</p>
+    <h2>Những khoảng dừng</h2>
+    <div class="content">
+      <p>Tôi không xem đây là những chuyến tham quan. Cũng không phải những lớp học ngoài trời. Mỗi vòng tròn được tạo ra như một khoảng không gian nơi người lớn và trẻ em có thể cùng quan sát, cùng tò mò và cùng khám phá thế giới theo một nhịp khác.</p>
+    </div>
+
+    <div class="poetic" style="margin-top: 20px;">
+      <p>Đó có thể là một buổi chiều trong bảo tàng.</p>
+      <p>Một cuộc đi bộ dưới những tán cây.</p>
+      <p>Một chuyến đi ngắn vào rừng.</p>
+      <p>Một bữa ăn được cùng nhau chuẩn bị.</p>
+      <p>Hay đơn giản là một cuộc trò chuyện mà trước đó chưa từng diễn ra.</p>
+    </div>
+
+    <div class="content">
+      <p>Điều tôi mong chờ không phải là mọi người học được thật nhiều kiến thức mới. Mà là mang về một góc nhìn mới, một ký ức chung hoặc một câu chuyện để tiếp tục kể cho nhau nghe sau khi trở về.</p>
+    </div>
+
+    <div class="divider-light"></div>
+
+    <h2>Vì sao là thiên nhiên và di sản?</h2>
+    <div class="content">
+      <p>Tôi nhận thấy thiên nhiên và các không gian văn hóa có một khả năng rất đặc biệt — chúng giúp con người chậm lại.</p>
+      <p>Một cái cây không cần dạy chúng ta điều gì. Một bảo tàng cũng không nhất thiết phải trở thành một lớp học. Nhưng khi bước vào những không gian ấy với sự hiện diện đủ đầy, chúng ta thường bắt đầu quan sát kỹ hơn, đặt nhiều câu hỏi hơn và nhìn thấy những điều trước đây từng đi ngang qua mình.</p>
+      <p>Thiên nhiên và di sản vì thế không phải là đích đến. Chúng là những không gian dung chứa cho sự gặp gỡ, quan sát và kết nối.</p>
+    </div>
+
+    <div class="divider-light"></div>
+
+    <h2>Điều tôi đang tiếp tục học hỏi</h2>
+    <div class="highlight-box">
+      <p>Tôi tò mò về cách con người học thông qua trải nghiệm.</p>
+      <p>Tôi quan tâm đến những điều kiện giúp trẻ em giữ được sự tò mò tự nhiên của mình.</p>
+      <p>Tôi muốn hiểu điều gì giúp những cuộc trò chuyện chân thành có thể xuất hiện giữa cha mẹ và con cái.</p>
+      <p>Và tôi tin rằng những chuyển hóa bền vững thường không đến từ những thay đổi thật nhanh. Chúng xuất hiện khi con người có đủ thời gian, đủ an toàn và đủ hiện diện để nhìn thấy điều gì đó mới mẻ trong chính mình và những người xung quanh.</p>
+    </div>
+
+    <div class="divider-light"></div>
+
+    <h2>Một hệ sinh thái của những kết nối</h2>
+    <div class="content">
+      <p>Theo thời gian, tôi dần nhìn Vòng Tròn Dưới Tán Cây không chỉ như một hoạt động trải nghiệm. Mà như một hệ sinh thái nhỏ của những kết nối.</p>
+    </div>
+
+    <div class="poetic">
+      <p>Giữa mẹ và con.</p>
+      <p>Giữa con người với thiên nhiên.</p>
+      <p>Giữa những gia đình cùng chia sẻ những mối quan tâm tương tự.</p>
+      <p>Và đôi khi, giữa mỗi người với những phần rất thật của chính mình.</p>
+    </div>
+
+    <div class="invitation">
+      <p>Nếu bạn cũng đang tìm kiếm những khoảng dừng như thế.</p>
+      <p>Một khoảng dừng để chậm lại. Để quan sát. Để trò chuyện.</p>
+      <p>Để ở cạnh những người mình yêu thương theo một cách khác hơn thường ngày.</p>
+      <p>Biết đâu chúng ta sẽ gặp nhau trong một vòng tròn nào đó dưới tán cây.</p>
     </div>
 
     <div class="cta-section">
