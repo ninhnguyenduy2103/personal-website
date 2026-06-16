@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Những câu hỏi tôi đang khám phá — Ninh Nguyen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #2F4538;
+    --sage: #B7C4B0;
+    --sage-soft: #DCE5D6;
+    --powder-pink: #F6DDE1;
+    --terracotta: #C97B5F;
+    --brown: #5A4434;
+    --ivory: #FBF7F2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "Montserrat", sans-serif;
+    background: var(--ivory);
+    color: var(--brown);
+    min-height: 100vh;
+    line-height: 1.8;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  .bg-deco { position: fixed; pointer-events: none; }
+  .bg-deco.tl { top: 0; left: 0; width: 45vmin; height: 45vmin;
+    background: radial-gradient(circle 500px at 8% 0%, rgba(220,229,214,0.5), transparent 70%); }
+  .bg-deco.br { bottom: 0; right: 0; width: 45vmin; height: 45vmin; }
+  .bg-deco.tr { top: 0; right: 0; width: 28vmin; height: 28vmin; }
+  .bg-deco.bl { bottom: 0; left: 0; width: 28vmin; height: 28vmin; }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 72px;
+    position: relative;
+  }
+
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--sage);
+    text-decoration: none;
+    margin-bottom: 48px;
+    transition: color 0.2s ease;
+  }
+  .back:hover { color: var(--forest); }
+
+  .page-header {
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--sage-soft);
+  }
+
+  .page-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-family: "Cormorant Garamond", "Bogart", serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--forest);
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+  }
+
+  .page-intro {
+    font-size: 1.05rem;
+    color: var(--brown);
+    line-height: 1.9;
+  }
+
+  /* Article list */
+  .article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .article-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--sage-soft);
+    border-radius: 14px;
+    padding: 20px 24px;
+    text-decoration: none;
+    color: var(--brown);
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .article-item:hover {
+    background: #cdd9c6;
+    transform: translateX(4px);
+  }
+
+  .article-num {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--terracotta);
+    opacity: 0.5;
+    line-height: 1;
+    min-width: 28px;
+    padding-top: 4px;
+  }
+
+  .article-text {
+    flex: 1;
+  }
+
+  .article-text p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--forest);
+    font-weight: 400;
+    text-align: left;
+    margin: 0;
+  }
+
+  .article-arrow {
+    color: var(--terracotta);
+    opacity: 0.6;
+    font-size: 1rem;
+    padding-top: 4px;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+  }
+
+  .article-item:hover .article-arrow {
+    opacity: 1;
+  }
+
+  /* CTA */
+  .cta-section {
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--sage-soft);
+    text-align: center;
+  }
+
+  .cta-label {
+    font-size: 0.85rem;
+    color: var(--sage);
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--powder-pink);
+    color: var(--brown);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 12px 28px;
+    border-radius: 100px;
+    letter-spacing: 0.03em;
+    transition: background 0.2s ease;
+  }
+
+  .cta-btn:hover { background: #edd0d5; }
+</style>
+</head>
+<body>
+
+<div class="bg-deco tl"></div>
+<div class="bg-deco br">
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+    <circle cx="160" cy="160" r="80" fill="rgba(183,196,176,0.18)"/>
+    <circle cx="120" cy="180" r="40" fill="rgba(201,123,95,0.12)"/>
+  </svg>
+</div>
+<div class="bg-deco tr">
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+    <circle cx="150" cy="50" r="50" fill="rgba(246,221,225,0.35)"/>
+    <circle cx="180" cy="20" r="25" fill="rgba(183,196,176,0.25)"/>
+  </svg>
+</div>
+<div class="bg-deco bl">
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+    <circle cx="40" cy="160" r="45" fill="rgba(220,229,214,0.3)"/>
+  </svg>
+</div>
+
+<div class="wrap">
+
+  <a class="back" href="index.html">← Quay lại trang chủ</a>
+
+  <div class="page-header">
+    <p class="page-label">Góc nhìn & suy nghĩ</p>
+    <h1>Những câu hỏi tôi đang khám phá</h1>
+    <p class="page-intro">Những bài viết bên dưới là nơi tôi chia sẻ các câu hỏi đang theo đuổi mình — về con người, tổ chức, và cách chúng ta cùng lớn lên trong công việc.</p>
+  </div>
+
+  <div class="article-list">
+
+    <a class="article-item" href="https://www.linkedin.com/posts/activity-7437307528587399169-ICIl?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABZvY6UB83AXx1jSNING_m4EggL9EK2u9z8" target="_blank" rel="noopener">
+      <span class="article-num">01</span>
+      <div class="article-text"><p>Đằng sau mỗi công việc, ta đang được rèn thành một con người khác</p></div>
+      <span class="article-arrow">↗</span>
+    </a>
+
+    <a class="article-item" href="https://www.linkedin.com/posts/activity-7438023336967786496-CzIy?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABZvY6UB83AXx1jSNING_m4EggL9EK2u9z8" target="_blank" rel="noopener">
+      <span class="article-num">02</span>
+      <div class="article-text"><p>Thứ đắt giá nhất bạn nhận được từ công việc không phải là lương hay KPI</p></div>
+      <span class="article-arrow">↗</span>
+    </a>
+
+    <a class="article-item" href="https://www.linkedin.com/posts/activity-7440210501420130304-nS5C?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABZvY6UB83AXx1jSNING_m4EggL9EK2u9z8" target="_blank" rel="noopener">
+      <span class="article-num">03</span>
+      <div class="article-text"><p>Điều khiến một cuộc đời rực rỡ không nằm ở việc nó giống ai, mà ở việc bạn có đang đi đúng trên con đường của mình hay không.</p></div>
+      <span class="article-arrow">↗</span>
+    </a>
+
+    <a class="article-item" href="https://www.linkedin.com/posts/activity-7441993339647934464-Nqro?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABZvY6UB83AXx1jSNING_m4EggL9EK2u9z8" target="_blank" rel="noopener">
+      <span class="article-num">04</span>
+      <div class="article-text"><p>Khi danh thiếp trở thành khuôn đúc: Mình đang lớn lên hay chỉ đang cố "vừa vặn"?</p></div>
+      <span class="article-arrow">↗</span>
+    </a>
+
+    <a class="article-item" href="https://www.linkedin.com/posts/activity-7442709279742111744-ttqv?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABZvY6UB83AXx1jSNING_m4EggL9EK2u9z8" target="_blank" rel="noopener">
+      <span class="article-num">05</span>
+      <div class="article-text"><p>Điều đang ngăn cản bạn viết trên LinkedIn không phải là thiếu ý tưởng</p></div>
+      <span class="article-arrow">↗</span>
+    </a>
+
+    <a class="article-item" href="https://www.linkedin.com/posts/activity-7444562905699897345-pXIm?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABZvY6UB83AXx1jSNING_m4EggL9EK2u9z8" target="_blank" rel="noopener">
+      <span class="article-num">06</span>
+      <div class="article-text"><p>Không phải bạn thiếu giá trị để kết nối với người giỏi hơn mình. Đôi khi bạn chỉ đang bắt đầu từ một tâm thế sai.</p></div>
+      <span class="article-arrow">↗</span>
+    </a>
+
+    <a class="article-item" href="https://www.linkedin.com/posts/activity-7447821023208448001-E9HR?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABZvY6UB83AXx1jSNING_m4EggL9EK2u9z8" target="_blank" rel="noopener">
+      <span class="article-num">07</span>
+      <div class="article-text"><p>Hiện tượng "chiếc ghế bị ám": Vì sao có những vị trí không ai trụ nổi?</p></div>
+      <span class="article-arrow">↗</span>
+    </a>
+
+    <a class="article-item" href="https://www.linkedin.com/posts/activity-7448915229905821696-x7NE?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABZvY6UB83AXx1jSNING_m4EggL9EK2u9z8" target="_blank" rel="noopener">
+      <span class="article-num">08</span>
+      <div class="article-text"><p>Hoá giải "lời nguyền", trả lại sự trong sạch cho chiếc ghế</p></div>
+      <span class="article-arrow">↗</span>
+    </a>
+
+    <a class="article-item" href="https://www.linkedin.com/posts/activity-7449658119758028800-iFJB?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABZvY6UB83AXx1jSNING_m4EggL9EK2u9z8" target="_blank" rel="noopener">
+      <span class="article-num">09</span>
+      <div class="article-text"><p>Am I falling behind? Là một phụ nữ công sở bước vào hành trình làm mẹ, bạn đã bao giờ tự hỏi: mình có đang tụt lại phía sau không?</p></div>
+      <span class="article-arrow">↗</span>
+    </a>
+
+    <a class="article-item" href="https://www.linkedin.com/posts/activity-7452226540622204930-h1dW?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABZvY6UB83AXx1jSNING_m4EggL9EK2u9z8" target="_blank" rel="noopener">
+      <span class="article-num">10</span>
+      <div class="article-text"><p>Ba/mẹ sau sinh quay trở lại công việc — là quay lại, hay là mang theo một lớp năng lực mà chưa ai từng gọi tên?</p></div>
+      <span class="article-arrow">↗</span>
+    </a>
+
+    <a class="article-item" href="https://www.linkedin.com/posts/activity-7457210602336210944-X1oR?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABZvY6UB83AXx1jSNING_m4EggL9EK2u9z8" target="_blank" rel="noopener">
+      <span class="article-num">11</span>
+      <div class="article-text"><p>Càng ở vị trí cao, có những phần rất người lại vô tình bị thu nhỏ lại.</p></div>
+      <span class="article-arrow">↗</span>
+    </a>
+
+    <a class="article-item" href="https://www.linkedin.com/posts/activity-7459452774800596992-BYW_?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABZvY6UB83AXx1jSNING_m4EggL9EK2u9z8" target="_blank" rel="noopener">
+      <span class="article-num">12</span>
+      <div class="article-text"><p>Có những thứ giữ chân một con người ở lại rất lâu, nhưng lại không nằm trong bất kỳ policy nào.</p></div>
+      <span class="article-arrow">↗</span>
+    </a>
+
+    <a class="article-item" href="https://www.linkedin.com/posts/activity-7463106744961949697-Bx7J?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABZvY6UB83AXx1jSNING_m4EggL9EK2u9z8" target="_blank" rel="noopener">
+      <span class="article-num">13</span>
+      <div class="article-text"><p>Nhiều tổ chức đang đầu tư rất nhiều cho wellbeing, nhưng có lẽ điều còn thiếu không hẳn là thêm phúc lợi, mà là khả năng nhìn sự phục hồi của con người như một phần của hệ thống vận hành dài hạn.</p></div>
+      <span class="article-arrow">↗</span>
+    </a>
+
+    <a class="article-item" href="https://www.linkedin.com/posts/activity-7468501290034241536-WxFs?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABZvY6UB83AXx1jSNING_m4EggL9EK2u9z8" target="_blank" rel="noopener">
+      <span class="article-num">14</span>
+      <div class="article-text"><p>Điều gì xảy ra khi những phần khác nhau của cùng một hệ thống không còn nhìn thấy nhau?</p></div>
+      <span class="article-arrow">↗</span>
+    </a>
+
+  </div>
+
+  <div class="cta-section">
+    <p class="cta-label">Đọc thêm các bài viết khác của tôi</p>
+    <a class="cta-btn" href="https://www.linkedin.com/in/ninhnguyen2103/" target="_blank" rel="noopener">
+      Xem hồ sơ LinkedIn ↗
+    </a>
+  </div>
+
+</div>
+</body>
+</html>
