@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hành trình doanh nghiệp — Ninh Nguyen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #2F4538;
+    --sage: #B7C4B0;
+    --sage-soft: #DCE5D6;
+    --powder-pink: #F6DDE1;
+    --terracotta: #C97B5F;
+    --brown: #5A4434;
+    --ivory: #FBF7F2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "Montserrat", sans-serif;
+    background: var(--ivory);
+    color: var(--brown);
+    min-height: 100vh;
+    line-height: 1.8;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  .bg-deco { position: fixed; pointer-events: none; }
+  .bg-deco.tl { top: 0; left: 0; width: 45vmin; height: 45vmin;
+    background: radial-gradient(circle 500px at 8% 0%, rgba(220,229,214,0.5), transparent 70%); }
+  .bg-deco.br { bottom: 0; right: 0; width: 45vmin; height: 45vmin; }
+  .bg-deco.tr { top: 0; right: 0; width: 28vmin; height: 28vmin; }
+  .bg-deco.bl { bottom: 0; left: 0; width: 28vmin; height: 28vmin; }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 72px;
+    position: relative;
+  }
+
+  /* Back link */
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--sage);
+    text-decoration: none;
+    margin-bottom: 48px;
+    transition: color 0.2s ease;
+  }
+  .back:hover { color: var(--forest); }
+
+  /* Page header */
+  .page-header {
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--sage-soft);
+  }
+
+  .page-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-family: "Cormorant Garamond", "Bogart", serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--forest);
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+  }
+
+  .page-intro {
+    font-size: 1.05rem;
+    color: var(--brown);
+    line-height: 1.9;
+  }
+
+  /* Body content */
+  .content p {
+    font-size: 0.97rem;
+    color: #3f4a40;
+    line-height: 1.9;
+    margin-bottom: 20px;
+  }
+
+  .content p:last-child { margin-bottom: 0; }
+
+  .divider-light {
+    width: 100%;
+    height: 1px;
+    background: var(--sage-soft);
+    margin: 40px 0;
+  }
+
+  h2 {
+    font-family: "Cormorant Garamond", "Bogart", serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--forest);
+    letter-spacing: 0.02em;
+    margin-bottom: 28px;
+  }
+
+  .phase-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-bottom: 0;
+  }
+
+  .phase {
+    background: var(--sage-soft);
+    border-radius: 14px;
+    padding: 24px 28px;
+  }
+
+  .phase h3 {
+    font-family: "Cormorant Garamond", "Bogart", serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 10px;
+    letter-spacing: 0.01em;
+  }
+
+  .phase p {
+    font-size: 0.92rem;
+    color: #3f4a40;
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  .capability-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .capability {
+    padding-left: 20px;
+    border-left: 2px solid var(--terracotta);
+  }
+
+  .capability h3 {
+    font-family: "Cormorant Garamond", "Bogart", serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 6px;
+  }
+
+  .capability p {
+    font-size: 0.92rem;
+    color: #3f4a40;
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  /* CTA section */
+  .cta-section {
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--sage-soft);
+    text-align: center;
+  }
+
+  .cta-label {
+    font-size: 0.85rem;
+    color: var(--sage);
+    letter-spacing: 0.04em;
+    margin-bottom: 20px;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 32px;
+    background: var(--powder-pink);
+    color: var(--brown);
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+  }
+
+  .cta-btn:hover {
+    background: var(--terracotta);
+    color: #fff;
+    transform: translateY(-1px);
+  }
+</style>
+</head>
+<body>
+
+  <!-- Decorative background -->
+  <svg class="bg-deco tl" viewBox="0 0 280 280" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.5"><circle cx="6" cy="0" r="42" fill="#F6DDE1"/><circle cx="30" cy="24" r="33" fill="#FBF7F2"/></g>
+    <g opacity="0.35"><circle cx="40" cy="30" r="26" fill="#2F4538"/><circle cx="120" cy="20" r="18" fill="#B7C4B0"/><circle cx="90" cy="90" r="22" fill="#C97B5F"/><circle cx="180" cy="70" r="14" fill="#5A4434"/><circle cx="20" cy="120" r="16" fill="#B7C4B0"/><circle cx="160" cy="140" r="20" fill="#2F4538"/><circle cx="250" cy="40" r="12" fill="#C97B5F"/></g>
+  </svg>
+  <svg class="bg-deco br" viewBox="0 0 280 280" preserveAspectRatio="xMaxYMax meet" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.45"><circle cx="230" cy="260" r="80" fill="#DCE5D6"/></g>
+    <g opacity="0.35"><circle cx="240" cy="250" r="26" fill="#2F4538"/><circle cx="160" cy="260" r="18" fill="#B7C4B0"/><circle cx="190" cy="190" r="22" fill="#C97B5F"/><circle cx="100" cy="210" r="14" fill="#5A4434"/><circle cx="260" cy="160" r="16" fill="#B7C4B0"/><circle cx="120" cy="140" r="20" fill="#2F4538"/><circle cx="30" cy="240" r="12" fill="#C97B5F"/></g>
+  </svg>
+  <svg class="bg-deco tr" viewBox="0 0 200 200" preserveAspectRatio="xMaxYMin meet" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.3"><circle cx="150" cy="20" r="50" fill="#B7C4B0"/><circle cx="190" cy="60" r="30" fill="#DCE5D6"/><circle cx="110" cy="40" r="10" fill="#C97B5F"/></g>
+  </svg>
+  <svg class="bg-deco bl" viewBox="0 0 200 200" preserveAspectRatio="xMinYMax meet" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.3"><circle cx="40" cy="160" r="45" fill="#F6DDE1"/><circle cx="10" cy="140" r="25" fill="#DCE5D6"/><circle cx="80" cy="190" r="14" fill="#B7C4B0"/></g>
+  </svg>
+
+  <div class="wrap">
+
+    <a class="back" href="index.html">← Quay lại trang chủ</a>
+
+    <header class="page-header">
+      <p class="page-label">Hành trình doanh nghiệp</p>
+      <h1>Con người, hệ thống và những nền tảng bền vững</h1>
+      <p class="page-intro">Một hành trình khám phá cách các tổ chức hình thành, phát triển và chuyển hóa qua thời gian.</p>
+    </header>
+
+    <div class="content">
+      <p>Trong hơn mười ba năm làm việc tại các công ty công nghệ và các tổ chức hoạt động đa quốc gia, tôi thường hiện diện ở những thời điểm chuyển giao quan trọng: khi một pháp nhân mới được thành lập, khi một đội ngũ mới bắt đầu hình thành, khi các hệ thống cần được kết nối sau tăng trưởng hoặc sáp nhập.</p>
+      <p>Nhìn lại hành trình nghề nghiệp của mình, tôi nhận ra điều luôn thu hút tôi không phải là việc vận hành những gì đã ổn định, mà là đồng hành cùng những giai đoạn chuyển hóa của tổ chức.</p>
+      <p>Có những giai đoạn cần xây dựng nền móng từ những viên gạch đầu tiên. Có những giai đoạn cần kết nối những con người đến từ nhiều nền văn hóa và bối cảnh khác nhau. Cũng có những giai đoạn mà tốc độ tăng trưởng đòi hỏi tổ chức phải tái cấu trúc, chuẩn hóa hoặc tìm kiếm một cách vận hành mới phù hợp hơn với thực tế đang thay đổi.</p>
+      <p>Công việc đưa tôi đi qua nhiều vai trò khác nhau, từ thiết lập và phát triển tổ chức tại Việt Nam, điều phối vận hành nguồn nhân lực ở cấp khu vực, đến tham gia tích hợp hệ thống và đội ngũ sau các thương vụ M&A. Những trải nghiệm đó cho tôi cơ hội quan sát cách các tổ chức hình thành, phát triển, thích nghi và đôi khi phải học cách tái tạo chính mình để tiếp tục tiến về phía trước.</p>
+      <p>Qua thời gian, tôi nhận ra rằng tổ chức không đơn thuần là một cỗ máy được vận hành bằng quy trình, chính sách hay KPI. Chúng giống những hệ sinh thái sống, nơi chất lượng của các mối quan hệ, mức độ tin cậy, khả năng học hỏi và năng lực phối hợp ảnh hưởng trực tiếp đến hiệu quả vận hành và sự phát triển dài hạn.</p>
+      <p>Có lẽ vì vậy mà những câu hỏi khiến tôi quan tâm nhất thường không chỉ là làm thế nào để hệ thống hoạt động hiệu quả hơn. Tôi cũng tò mò về cách con người tìm thấy ý nghĩa trong công việc, cách các đội ngũ xây dựng niềm tin, cách văn hóa được hình thành và cách một tổ chức có thể phát triển mà không đánh mất những giá trị cốt lõi của mình.</p>
+    </div>
+
+    <div class="divider-light"></div>
+
+    <h2>Những giai đoạn chuyển hóa của tổ chức mà tôi thường đồng hành</h2>
+    <div class="phase-list">
+      <div class="phase">
+        <h3>Khi một tổ chức bắt đầu hình thành</h3>
+        <p>Từ việc thiết lập pháp nhân, xây dựng đội ngũ đầu tiên đến hình thành các nền tảng vận hành ban đầu, tôi thường được mời tham gia trong những giai đoạn mà tổ chức cần chuyển từ một ý tưởng hoặc tầm nhìn thành một thực thể sống động, với những viên gạch nền móng và những thành viên đầu tiên.</p>
+      </div>
+      <div class="phase">
+        <h3>Khi tổ chức bước vào giai đoạn tăng trưởng</h3>
+        <p>Tăng trưởng tạo ra những cơ hội mới, nhưng cũng đặt ra những thách thức mới về cấu trúc, năng lực quản trị và khả năng phối hợp. Đây là giai đoạn tôi thường hỗ trợ các đội ngũ rà soát, chuẩn hóa và phát triển những nền tảng cần thiết cho bước phát triển tiếp theo.</p>
+      </div>
+      <div class="phase">
+        <h3>Khi nhiều hệ thống cần được kết nối</h3>
+        <p>Làm việc trong môi trường đa quốc gia giúp tôi có cơ hội đồng hành cùng những đội ngũ trải dài qua nhiều quốc gia, ngôn ngữ và bối cảnh văn hóa khác nhau. Tôi quan tâm đến việc tìm ra những điểm giao thoa giúp các hệ thống và con người có thể phối hợp hiệu quả mà vẫn giữ được bản sắc riêng của mình.</p>
+      </div>
+      <div class="phase">
+        <h3>Khi tổ chức trải qua thay đổi và tái cấu trúc</h3>
+        <p>Mỗi thương vụ sáp nhập, mỗi lần tái cấu trúc hay thay đổi chiến lược đều tạo ra những chuyển động sâu sắc bên trong tổ chức. Bên cạnh các yếu tố về quy trình và cấu trúc, tôi đặc biệt quan tâm đến trải nghiệm của con người trong những giai đoạn chuyển tiếp đó.</p>
+      </div>
+    </div>
+
+    <div class="divider-light"></div>
+
+    <h2>Những năng lực được hình thành qua hành trình</h2>
+    <div class="capability-list">
+      <div class="capability">
+        <h3>Xây dựng nền tảng cho những điều mới bắt đầu</h3>
+        <p>Từ pháp nhân, đội ngũ đến các cấu trúc vận hành ban đầu, tôi quan tâm đến việc tạo ra những nền tảng đủ vững chắc để một tổ chức có thể phát triển lâu dài.</p>
+      </div>
+      <div class="capability">
+        <h3>Kết nối con người, hệ thống và mục tiêu chung</h3>
+        <p>Giữa những thay đổi, tăng trưởng và chuyển dịch của tổ chức, điều quan trọng không chỉ là quy trình hay cấu trúc, mà còn là khả năng tạo ra sự liên kết giữa con người và mục tiêu chung.</p>
+      </div>
+      <div class="capability">
+        <h3>Điều phối trong những bối cảnh đa văn hóa</h3>
+        <p>Làm việc cùng các đội ngũ đa quốc gia giúp tôi học cách lắng nghe những khác biệt, tìm kiếm điểm giao thoa và xây dựng sự hợp tác giữa những con người có xuất phát điểm khác nhau.</p>
+      </div>
+      <div class="capability">
+        <h3>Nuôi dưỡng năng lực phát triển dài hạn</h3>
+        <p>Tôi quan tâm đến những điều kiện giúp cả tổ chức và con người có thể học hỏi, thích nghi và phát triển bền vững trong một thế giới luôn thay đổi.</p>
+      </div>
+    </div>
+
+    <div class="divider-light"></div>
+
+    <div class="content">
+      <p>Ngày nay, tôi tiếp tục quan tâm tới giao điểm giữa con người, hệ thống và sự phát triển bền vững.</p>
+      <p>Tôi tin rằng những tổ chức khỏe mạnh không chỉ được tạo nên bởi chiến lược đúng hay cấu trúc tốt, mà còn bởi khả năng nuôi dưỡng niềm tin, sự hợp tác và năng lực phát triển của những con người bên trong đó.</p>
+      <p>Có lẽ đó cũng là sợi chỉ xuyên suốt hành trình của tôi cho đến hôm nay: tìm hiểu cách những hệ sinh thái lành mạnh được hình thành, dù đó là một tổ chức, một cộng đồng hay một đội nhóm cùng hướng tới một mục đích chung.</p>
+    </div>
+
+    <div class="cta-section">
+      <p class="cta-label">Kết nối với Ninh trên LinkedIn</p>
+      <a class="cta-btn" href="https://www.linkedin.com/in/ninhnguyen2103/" target="_blank" rel="noopener noreferrer">
+        Xem hồ sơ LinkedIn ↗
+      </a>
+    </div>
+
+  </div>
+</body>
+</html>

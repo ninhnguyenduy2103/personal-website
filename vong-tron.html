@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vòng Tròn Dưới Tán Cây — Ninh Nguyen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #2F4538;
+    --sage: #B7C4B0;
+    --sage-soft: #DCE5D6;
+    --powder-pink: #F6DDE1;
+    --terracotta: #C97B5F;
+    --brown: #5A4434;
+    --ivory: #FBF7F2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "Montserrat", sans-serif;
+    background: var(--ivory);
+    color: var(--brown);
+    min-height: 100vh;
+    line-height: 1.8;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  .bg-deco { position: fixed; pointer-events: none; }
+  .bg-deco.tl { top: 0; left: 0; width: 45vmin; height: 45vmin;
+    background: radial-gradient(circle 500px at 8% 0%, rgba(220,229,214,0.5), transparent 70%); }
+  .bg-deco.br { bottom: 0; right: 0; width: 45vmin; height: 45vmin; }
+  .bg-deco.tr { top: 0; right: 0; width: 28vmin; height: 28vmin; }
+  .bg-deco.bl { bottom: 0; left: 0; width: 28vmin; height: 28vmin; }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 72px;
+    position: relative;
+  }
+
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--sage);
+    text-decoration: none;
+    margin-bottom: 48px;
+    transition: color 0.2s ease;
+  }
+  .back:hover { color: var(--forest); }
+
+  .page-header {
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--sage-soft);
+  }
+
+  .page-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-family: "Cormorant Garamond", "Bogart", serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--forest);
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+  }
+
+  .page-intro {
+    font-size: 1.05rem;
+    color: var(--brown);
+    line-height: 1.9;
+  }
+
+  .content p {
+    font-size: 0.97rem;
+    color: #3f4a40;
+    line-height: 1.9;
+    margin-bottom: 20px;
+  }
+  .content p:last-child { margin-bottom: 0; }
+
+  .divider-light {
+    width: 100%;
+    height: 1px;
+    background: var(--sage-soft);
+    margin: 40px 0;
+  }
+
+  /* Placeholder notice */
+  .placeholder-box {
+    background: var(--sage-soft);
+    border-radius: 14px;
+    padding: 32px 36px;
+    text-align: center;
+  }
+
+  .placeholder-box p {
+    font-size: 0.92rem;
+    color: #3f4a40;
+    line-height: 1.8;
+  }
+
+  /* CTA */
+  .cta-section {
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--sage-soft);
+    text-align: center;
+  }
+
+  .cta-label {
+    font-size: 0.85rem;
+    color: var(--sage);
+    letter-spacing: 0.04em;
+    margin-bottom: 20px;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 32px;
+    background: var(--forest);
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: background 0.25s ease, transform 0.2s ease;
+  }
+
+  .cta-btn:hover {
+    background: var(--brown);
+    transform: translateY(-1px);
+  }
+</style>
+</head>
+<body>
+
+  <!-- Decorative background -->
+  <svg class="bg-deco tl" viewBox="0 0 280 280" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.5"><circle cx="6" cy="0" r="42" fill="#F6DDE1"/><circle cx="30" cy="24" r="33" fill="#FBF7F2"/></g>
+    <g opacity="0.35"><circle cx="40" cy="30" r="26" fill="#2F4538"/><circle cx="120" cy="20" r="18" fill="#B7C4B0"/><circle cx="90" cy="90" r="22" fill="#C97B5F"/><circle cx="180" cy="70" r="14" fill="#5A4434"/><circle cx="20" cy="120" r="16" fill="#B7C4B0"/><circle cx="160" cy="140" r="20" fill="#2F4538"/><circle cx="250" cy="40" r="12" fill="#C97B5F"/></g>
+  </svg>
+  <svg class="bg-deco br" viewBox="0 0 280 280" preserveAspectRatio="xMaxYMax meet" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.45"><circle cx="230" cy="260" r="80" fill="#DCE5D6"/></g>
+    <g opacity="0.35"><circle cx="240" cy="250" r="26" fill="#2F4538"/><circle cx="160" cy="260" r="18" fill="#B7C4B0"/><circle cx="190" cy="190" r="22" fill="#C97B5F"/><circle cx="100" cy="210" r="14" fill="#5A4434"/><circle cx="260" cy="160" r="16" fill="#B7C4B0"/><circle cx="120" cy="140" r="20" fill="#2F4538"/><circle cx="30" cy="240" r="12" fill="#C97B5F"/></g>
+  </svg>
+  <svg class="bg-deco tr" viewBox="0 0 200 200" preserveAspectRatio="xMaxYMin meet" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.3"><circle cx="150" cy="20" r="50" fill="#B7C4B0"/><circle cx="190" cy="60" r="30" fill="#DCE5D6"/><circle cx="110" cy="40" r="10" fill="#C97B5F"/></g>
+  </svg>
+  <svg class="bg-deco bl" viewBox="0 0 200 200" preserveAspectRatio="xMinYMax meet" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.3"><circle cx="40" cy="160" r="45" fill="#F6DDE1"/><circle cx="10" cy="140" r="25" fill="#DCE5D6"/><circle cx="80" cy="190" r="14" fill="#B7C4B0"/></g>
+  </svg>
+
+  <div class="wrap">
+
+    <a class="back" href="index.html">← Quay lại trang chủ</a>
+
+    <header class="page-header">
+      <p class="page-label">Dự án cộng đồng</p>
+      <h1>Vòng Tròn Dưới Tán Cây</h1>
+      <p class="page-intro">Con người, tự nhiên và sự kết nối bền vững.</p>
+    </header>
+
+    <div class="content">
+      <p>Song song với thế giới doanh nghiệp, tôi dành thời gian khám phá những không gian học tập và kết nối dựa trên trải nghiệm trực tiếp với thiên nhiên, cộng đồng và chính mình.</p>
+      <p>Từ những vòng tròn dưới tán cây đến các hoạt động giáo dục trải nghiệm, tôi quan tâm đến cách con người xây dựng mối liên hệ sâu sắc hơn với bản thân, với người khác và với thế giới tự nhiên.</p>
+    </div>
+
+    <div class="divider-light"></div>
+
+    <div class="placeholder-box">
+      <p>Nội dung chi tiết về Vòng Tròn Dưới Tán Cây đang được chuẩn bị.<br>Bạn có thể theo dõi cập nhật trên trang Facebook của dự án.</p>
+    </div>
+
+    <div class="cta-section">
+      <p class="cta-label">Theo dõi Vòng Tròn Dưới Tán Cây</p>
+      <a class="cta-btn" href="https://www.facebook.com/ninh.peace" target="_blank" rel="noopener noreferrer">
+        Xem trang Facebook ↗
+      </a>
+    </div>
+
+  </div>
+</body>
+</html>

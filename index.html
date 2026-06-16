@@ -156,7 +156,14 @@
     }
   }
 
-  /* Bio section */
+  /* Left column: 2 stacked cards */
+  .left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Bio section (right column — Nuôi dưỡng) */
   .bio-section {
     background: var(--sage-soft);
     border-radius: 16px;
@@ -164,7 +171,24 @@
     margin-bottom: 0;
   }
 
-  .bio-section h2 {
+  /* Bio card (left column — 2 clickable cards) */
+  .bio-card {
+    background: var(--sage-soft);
+    border-radius: 16px;
+    padding: 28px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .bio-card:hover {
+    box-shadow: 0 4px 20px rgba(47,69,56,0.1);
+    transform: translateY(-2px);
+  }
+
+  .bio-section h2,
+  .bio-card h2 {
     font-family: "Cormorant Garamond", "Bogart", serif;
     font-size: 1.3rem;
     font-weight: 600;
@@ -173,14 +197,42 @@
     letter-spacing: 0.02em;
   }
 
-  .bio-section p {
+  .bio-section p,
+  .bio-card p {
     font-size: 0.97rem;
     color: #3f4a40;
     margin-bottom: 14px;
   }
 
-  .bio-section p:last-child {
+  .bio-section p:last-child,
+  .bio-card p:last-child {
     margin-bottom: 0;
+  }
+
+  .card-spacer {
+    flex: 1;
+  }
+
+  .card-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 9px 20px;
+    background: var(--forest);
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 999px;
+    align-self: flex-start;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .card-btn:hover {
+    background: var(--brown);
+    transform: translateY(-1px);
   }
 
   .nurture-list {
@@ -433,11 +485,23 @@
     <p class="quote narrow">Mối quan tâm của tôi nằm ở giao điểm giữa giáo dục, văn hóa và mối quan hệ giữa con người với nhau, với cộng đồng và với Trái Đất.</p>
 
     <div class="info-grid">
-      <section class="bio-section">
-        <h2>Đôi nét về công việc</h2>
-        <p>Hiện tôi đồng hành cùng các doanh nghiệp và tổ chức trong việc xây dựng nền tảng vận hành và phát triển.</p>
-        <p>Đồng thời, tôi cũng phát triển những dự án cá nhân nhằm tạo ra các không gian học tập, trải nghiệm văn hóa và những cuộc trò chuyện có ý nghĩa cho gia đình và cộng đồng.</p>
-      </section>
+      <div class="left-col">
+        <article class="bio-card">
+          <h2>Con người, hệ thống và những nền tảng bền vững</h2>
+          <p>Hơn 13 năm làm việc trong môi trường doanh nghiệp công nghệ và đa quốc gia, tôi thường đồng hành cùng các tổ chức trong những giai đoạn chuyển tiếp quan trọng: từ xây dựng nền tảng ban đầu, mở rộng quy mô, tích hợp sau M&A đến phát triển năng lực tổ chức trong dài hạn.</p>
+          <p>Những trải nghiệm đó giúp tôi hình thành góc nhìn về tổ chức như một hệ sinh thái sống, nơi con người, cấu trúc và văn hóa cùng ảnh hưởng đến khả năng phát triển bền vững.</p>
+          <div class="card-spacer"></div>
+          <a class="card-btn" href="hanh-trinh.html">Khám phá hành trình doanh nghiệp →</a>
+        </article>
+
+        <article class="bio-card">
+          <h2>Con người, tự nhiên và sự kết nối bền vững</h2>
+          <p>Song song với thế giới doanh nghiệp, tôi dành thời gian khám phá những không gian học tập và kết nối dựa trên trải nghiệm trực tiếp với thiên nhiên, cộng đồng và chính mình.</p>
+          <p>Từ những vòng tròn dưới tán cây đến các hoạt động giáo dục trải nghiệm, tôi quan tâm đến cách con người xây dựng mối liên hệ sâu sắc hơn với bản thân, với người khác và với thế giới tự nhiên.</p>
+          <div class="card-spacer"></div>
+          <a class="card-btn" href="vong-tron.html">Khám phá Vòng Tròn Dưới Tán Cây →</a>
+        </article>
+      </div>
 
       <section class="bio-section">
         <h2>Những điều tôi đang nuôi dưỡng</h2>
@@ -449,15 +513,6 @@
           <li>Những hoạt động góp phần xây dựng lối sống xanh, sự kết nối với thiên nhiên và một tương lai bền vững hơn.</li>
         </ul>
       </section>
-    </div>
-
-    <div class="cta-wrap narrow">
-      <a class="linkedin" href="https://www.linkedin.com/in/ninhnguyen2103/" target="_blank" rel="noopener noreferrer">
-        Kết nối trên LinkedIn ↗
-      </a>
-      <a class="project" href="https://www.facebook.com/ninh.peace" target="_blank" rel="noopener noreferrer">
-        Vòng tròn dưới tán cây ↗
-      </a>
     </div>
 
     <div class="contact narrow">
