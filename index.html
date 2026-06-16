@@ -171,20 +171,69 @@
     margin-bottom: 0;
   }
 
-  /* Bio card (left column — 2 clickable cards) */
+  /* Bio card (left column — 2 cards with hover popup) */
   .bio-card {
     background: var(--sage-soft);
     border-radius: 16px;
-    padding: 28px 28px 24px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    position: relative;
+    overflow: visible;
   }
 
-  .bio-card:hover {
-    box-shadow: 0 4px 20px rgba(47,69,56,0.1);
-    transform: translateY(-2px);
+  /* Compact face: title + cue — sets card height in normal flow */
+  .card-face {
+    padding: 28px 28px 24px;
+    display: none; /* hidden on mobile */
+  }
+
+  /* Hover hint shown on desktop */
+  .card-cue {
+    display: block;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--terracotta);
+    margin-top: 10px;
+    opacity: 0.75;
+    transition: opacity 0.2s;
+  }
+
+  /* Full popup: shown on desktop hover, displayed normally on mobile */
+  .card-popup {
+    padding: 28px 28px 24px;
+  }
+
+  @media (min-width: 760px) {
+    .card-face {
+      display: block; /* show compact face on desktop */
+    }
+
+    .bio-card:hover {
+      z-index: 15;
+    }
+
+    .bio-card:hover .card-cue {
+      opacity: 0;
+    }
+
+    .card-popup {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      background: var(--sage-soft);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 12px 40px rgba(47,69,56,0.18);
+      z-index: 20;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-4px);
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s 0.25s;
+    }
+
+    .bio-card:hover .card-popup {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
   }
 
   .bio-section h2,
@@ -487,19 +536,29 @@
     <div class="info-grid">
       <div class="left-col">
         <article class="bio-card">
-          <h2>Con người, hệ thống và những nền tảng bền vững</h2>
-          <p>Hơn 13 năm làm việc trong môi trường doanh nghiệp công nghệ và đa quốc gia, tôi thường đồng hành cùng các tổ chức trong những giai đoạn chuyển tiếp quan trọng: từ xây dựng nền tảng ban đầu, mở rộng quy mô, tích hợp sau M&A đến phát triển năng lực tổ chức trong dài hạn.</p>
-          <p>Những trải nghiệm đó giúp tôi hình thành góc nhìn về tổ chức như một hệ sinh thái sống, nơi con người, cấu trúc và văn hóa cùng ảnh hưởng đến khả năng phát triển bền vững.</p>
-          <div class="card-spacer"></div>
-          <a class="card-btn" href="hanh-trinh.html">Khám phá hành trình doanh nghiệp →</a>
+          <div class="card-face">
+            <h2>Con người, hệ thống và những nền tảng bền vững</h2>
+            <span class="card-cue">Rê chuột để xem thêm →</span>
+          </div>
+          <div class="card-popup">
+            <h2>Con người, hệ thống và những nền tảng bền vững</h2>
+            <p>Hơn 13 năm làm việc trong môi trường doanh nghiệp công nghệ và đa quốc gia, tôi thường đồng hành cùng các tổ chức trong những giai đoạn chuyển tiếp quan trọng: từ xây dựng nền tảng ban đầu, mở rộng quy mô, tích hợp sau M&A đến phát triển năng lực tổ chức trong dài hạn.</p>
+            <p>Những trải nghiệm đó giúp tôi hình thành góc nhìn về tổ chức như một hệ sinh thái sống, nơi con người, cấu trúc và văn hóa cùng ảnh hưởng đến khả năng phát triển bền vững.</p>
+            <a class="card-btn" href="hanh-trinh.html">Khám phá hành trình doanh nghiệp →</a>
+          </div>
         </article>
 
         <article class="bio-card">
-          <h2>Con người, tự nhiên và sự kết nối bền vững</h2>
-          <p>Song song với thế giới doanh nghiệp, tôi dành thời gian khám phá những không gian học tập và kết nối dựa trên trải nghiệm trực tiếp với thiên nhiên, cộng đồng và chính mình.</p>
-          <p>Từ những vòng tròn dưới tán cây đến các hoạt động giáo dục trải nghiệm, tôi quan tâm đến cách con người xây dựng mối liên hệ sâu sắc hơn với bản thân, với người khác và với thế giới tự nhiên.</p>
-          <div class="card-spacer"></div>
-          <a class="card-btn" href="vong-tron.html">Khám phá Vòng Tròn Dưới Tán Cây →</a>
+          <div class="card-face">
+            <h2>Con người, tự nhiên và sự kết nối bền vững</h2>
+            <span class="card-cue">Rê chuột để xem thêm →</span>
+          </div>
+          <div class="card-popup">
+            <h2>Con người, tự nhiên và sự kết nối bền vững</h2>
+            <p>Song song với thế giới doanh nghiệp, tôi dành thời gian khám phá những không gian học tập và kết nối dựa trên trải nghiệm trực tiếp với thiên nhiên, cộng đồng và chính mình.</p>
+            <p>Từ những vòng tròn dưới tán cây đến các hoạt động giáo dục trải nghiệm, tôi quan tâm đến cách con người xây dựng mối liên hệ sâu sắc hơn với bản thân, với người khác và với thế giới tự nhiên.</p>
+            <a class="card-btn" href="vong-tron.html">Khám phá Vòng Tròn Dưới Tán Cây →</a>
+          </div>
         </article>
       </div>
 
